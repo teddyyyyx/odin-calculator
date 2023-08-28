@@ -1,7 +1,9 @@
 *, ::before, ::after{
     box-sizing: border-box;
 }
-
+body{
+    background-color: gray;
+}
 
 .container{
     display: flex;
@@ -34,6 +36,10 @@
 
 .buttons > button{
     height: 40px;
+    background-color: lightgray;
+    color: rgb(38, 43, 46);
+    font-weight: 400;
+    font-size: large;
 }
 
 .buttons > button:hover{
@@ -65,4 +71,5 @@
     text-align: center;
     padding: 0;
     margin: 0 10px 10px;
+    color: aliceblue;
 }
