@@ -5,7 +5,8 @@ const operatorButton = document.querySelectorAll('[data-operator]')
 const allClearButton = document.querySelector('[data-all-clear]')
 const equalButton = document.querySelector('[data-equal]')
 const deleteButton = document.querySelector('[data-delete]')
-const decimalButton = document.querySelector('[data-decimal]')
+const decimalButton = document.querySelector('[data-decimal]') 
+const changeSignButton = document.querySelector('[data-change-sign]') 
 
 let operator = null;
 let firstNum = null;
@@ -63,7 +64,9 @@ function operate(operatorSymbol, a, b){
 
 function del(){
     currentOperand.textContent = currentOperand.textContent.slice(0, -1)
+    operatorIsClick = false;
 }
+
 function allClear(){
     console.log("working")
     currentOperand.textContent = '';
@@ -71,6 +74,7 @@ function allClear(){
     firstNum = null;
     secondNum = null;
     operator = null;
+    operatorIsClick = false;
 
                                                                                                 console.log(`first num: ${firstNum}`)
                                                                                                 console.log(`second num: ${secondNum}`)
