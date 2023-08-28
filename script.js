@@ -33,6 +33,7 @@ decimalButton.addEventListener("click", decimal)
 
 // Functions
 function equal(){
+    if(secondNum === null) return
     secondNum = currentOperand.textContent;
     
     if(operator === '/' && (firstNum == 0 || secondNum == 0)) alert('Cannot divide with zero!')
