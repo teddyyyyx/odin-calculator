@@ -33,6 +33,8 @@ decimalButton.addEventListener("click", decimal)
 // Functions
 function equal(){
     secondNum = currentOperand.textContent;
+    
+    if(operator === '/' && (firstNum == 0 || secondNum == 0)) alert('Cannot divide with zero!')
 
                                                                                             console.log(`first num: ${firstNum}`)
                                                                                             console.log(`second num: ${secondNum}`)
@@ -41,6 +43,7 @@ function equal(){
 
 
     currentOperand.textContent = operate(operator, parseInt(firstNum), parseInt(secondNum));
+
 }
 
 function operate(operatorSymbol, a, b){
