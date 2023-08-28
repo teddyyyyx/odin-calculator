@@ -69,6 +69,7 @@ body{
     align-items: end;
     padding: 10px;
     border-radius: 15px;
+    overflow: hidden;
 }
 
 .name-test{
