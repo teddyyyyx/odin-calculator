@@ -7,17 +7,18 @@ const equalButton = document.querySelector('[data-equal]')
 const deleteButton = document.querySelector('[data-delete]')
 const decimalButton = document.querySelector('[data-decimal]')
 
-let operator = '';
-let firstNum = '';
-let secondNum = '';
+let operator = null;
+let firstNum = null;
+let secondNum = null;
+let operatorIsClick = false;
 
 // Event Listeners
 buttons.forEach(button => {
-    button.addEventListener("click", currentDisplay)
+    button.addEventListener("click", numberDisplay)
 })
 
 operatorButton.forEach(button => {
-    button.addEventListener("click", operatorIsClicked)
+    button.addEventListener("click", operatorFunction)
 })
 
 allClearButton.addEventListener("click", allClear)
@@ -33,9 +34,11 @@ decimalButton.addEventListener("click", decimal)
 function equal(){
     secondNum = currentOperand.textContent;
 
-    console.log(`first num: ${firstNum}`)
-    console.log(`second num: ${secondNum}`)
-    console.log(`operator: ${operator}`)
+                                                                                            console.log(`first num: ${firstNum}`)
+                                                                                            console.log(`second num: ${secondNum}`)
+                                                                                            console.log(`operator: ${operator}`)
+                                                                                            console.log(`              `);
+
 
     currentOperand.textContent = operate(operator, parseInt(firstNum), parseInt(secondNum));
 }
@@ -62,18 +65,56 @@ function allClear(){
     console.log("working")
     currentOperand.textContent = '';
     previousOperand.textContent = '';
+    firstNum = null;
+    secondNum = null;
+    operator = null;
+
+                                                                                                console.log(`first num: ${firstNum}`)
+                                                                                                console.log(`second num: ${secondNum}`)
+                                                                                                console.log(`operator: ${operator}`)
+                                                                                                console.log(`              `);
 }
 
-function operatorIsClicked(){
+function operatorFunction(){
+    // if(currentOperand.textContent === '') return;
     operator = this.textContent;
-    previousOperand.textContent = currentOperand.textContent + ' ' + operator;
     firstNum = currentOperand.textContent;
-    currentOperand.textContent = ' ';
+    
+    if(operatorIsClick) {
+        let test = previousOperand.textContent.slice(0, -1);
+        previousOperand.textContent = test + operator;
+        firstNum = test;
+        console.log(test);
+
+        return
+    }
+    
+    if(secondNum === null) return
+
+    operatorIsClick = true;
+    previousOperand.textContent = currentOperand.textContent + ' ' + operator;
+    currentOperand.textContent = '';
+    secondNum = null;
+
+    console.log(`first num: ${firstNum}`)
+    console.log(`second num: ${secondNum}`)
+    console.log(`operator: ${operator}`)
+    console.log(`              `);
+
 }
 
-function currentDisplay(){
-    // console.log(this)
+function numberDisplay(){
     currentOperand.textContent += this.textContent;
+    operatorIsClick = false;
+    secondNum = currentOperand.textContent;
+
+
+                                                                                            console.log(`first num: ${firstNum}`)
+                                                                                            console.log(`second num: ${secondNum}`)
+                                                                                            console.log(`operator: ${operator}`)
+                                                                                            console.log(`              `);
+
+
 }
 
 function decimal(){
