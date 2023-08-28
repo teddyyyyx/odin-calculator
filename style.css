@@ -1,0 +1,68 @@
+*, ::before, ::after{
+    box-sizing: border-box;
+}
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator{
+    width: 300px;
+    height: auto;
+    border: 1px solid black;
+    padding: 20px;
+    background-color: rgb(13, 15, 41);
+}
+
+.display{
+    width: auto;
+    height: 70px;
+    background-color: rgb(133, 166, 196);
+    margin-bottom: 10px;
+    border: 2px solid black;
+}
+
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.buttons > button{
+    height: 40px;
+}
+
+.buttons > button:hover{
+    background-color: antiquewhite;
+}
+
+.span2{
+    grid-column: span 2;
+}
+
+
+
+.previousNumDisplay{
+    height: 18.5px;
+}
+
+.currentNumDisplay{
+    font-size: xx-large;
+}
+
+.display{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    padding: 10px;
+}
+
+.name-test{
+    text-align: center;
+    padding: 0;
+    margin: 0 10px 10px;
+}
