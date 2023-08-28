@@ -70,6 +70,10 @@ body{
     padding: 10px;
     border-radius: 15px;
     overflow: hidden;
+    word-wrap: break-word;
+    word-break: break-all;
+    min-height: 80px;
+    height: auto;
 }
 
 .name-test{
