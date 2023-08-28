@@ -30,8 +30,21 @@ deleteButton.addEventListener("click", del)
 
 decimalButton.addEventListener("click", decimal)
 
+changeSignButton.addEventListener("click", changeSignFunction)
+
+
+let toggle = true;
 
 // Functions
+function changeSignFunction(){
+     if(currentOperand.textContent.slice(0,1) === '-'){
+        currentOperand.textContent = currentOperand.textContent.substring(1)
+     } else if(toggle){
+        currentOperand.textContent = '-' + currentOperand.textContent
+        toggle = true;
+     }
+}
+
 function equal(){
     if(secondNum === null) return
     secondNum = currentOperand.textContent;
@@ -66,6 +79,7 @@ function operate(operatorSymbol, a, b){
 function del(){
     currentOperand.textContent = currentOperand.textContent.slice(0, -1)
     operatorIsClick = false;
+    toggle = true;
 }
 
 function allClear(){
@@ -76,6 +90,7 @@ function allClear(){
     secondNum = null;
     operator = null;
     operatorIsClick = false;
+    toggle = true;
 
                                                                                                 console.log(`first num: ${firstNum}`)
                                                                                                 console.log(`second num: ${secondNum}`)
