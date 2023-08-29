@@ -48,7 +48,7 @@ body{
     font-weight: 400;
     font-size: large;
     border-radius: 20px;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.05s ease-in-out;
 }
 
 .buttons > button:hover{
@@ -58,12 +58,18 @@ body{
     transform: translate(1px, 1px);
 }
 
+.buttons > .operator{
+    background-color: rgb(133, 118, 118) !important;
+}
+.buttons > .operator:hover{
+    background-color: rgb(148, 134, 134) !important;
+}
+
+
 
 .span2{
     grid-column: span 2;
 }
-
-
 
 .previousNumDisplay{
     height: 18.5px;
@@ -71,7 +77,6 @@ body{
 
 .currentNumDisplay{
     font-size: xx-large;
-    
 }
 
 .display{
@@ -97,9 +102,7 @@ body{
 
 
 
-
-
-
+/* Not part of calculator design. Just some added piece at the bottom. Hello thing*/
 
 .test {
     width: 307px;
